@@ -25,7 +25,7 @@ namespace FancyTemplate.Controllers
             }
             else
             {
-                return RedirectToAction("LogIn");
+                return RedirectToAction("LogIn","AdminPanel");
             }
             
         }
@@ -48,7 +48,7 @@ namespace FancyTemplate.Controllers
             }
             else
             {
-                return RedirectToAction("LogIn");
+                return RedirectToAction("LogIn", "AdminPanel");
             }
         }
 
@@ -62,7 +62,7 @@ namespace FancyTemplate.Controllers
                 return View();
             }else
             {
-                return RedirectToAction("LogIn");
+                return RedirectToAction("LogIn", "AdminPanel");
             }
         }
 
@@ -96,7 +96,7 @@ namespace FancyTemplate.Controllers
             }
             else
             {
-                return RedirectToAction("LogIn");
+                return RedirectToAction("LogIn", "AdminPanel");
             }
         }
 
@@ -119,7 +119,7 @@ namespace FancyTemplate.Controllers
             }
             else
             {
-                return RedirectToAction("LogIn");
+                return RedirectToAction("LogIn", "AdminPanel");
             }
         }
 
@@ -143,7 +143,7 @@ namespace FancyTemplate.Controllers
             }
             else
             {
-                return RedirectToAction("LogIn");
+                return RedirectToAction("LogIn", "AdminPanel");
             }
         }
 
@@ -165,7 +165,7 @@ namespace FancyTemplate.Controllers
             }
             else
             {
-                return RedirectToAction("LogIn");
+                return RedirectToAction("LogIn", "AdminPanel");
             }
         }
 
@@ -183,7 +183,7 @@ namespace FancyTemplate.Controllers
             }
             else
             {
-                return RedirectToAction("LogIn");
+                return RedirectToAction("LogIn", "AdminPanel");
             }
         }
 

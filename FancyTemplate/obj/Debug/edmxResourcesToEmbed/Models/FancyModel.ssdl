@@ -47,6 +47,14 @@
     <Property Name="industries_img" Type="nvarchar" MaxLength="50" />
     <Property Name="industries_url" Type="nvarchar" MaxLength="350" />
   </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menu_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="menu_url" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Messages">
     <Key>
       <PropertyRef Name="message_id" />
@@ -115,6 +123,7 @@
     <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Feature_Boxes" EntityType="Self.Feature_Boxes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Industries" EntityType="Self.Industries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service_Area" EntityType="Self.Service_Area" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service_Area_Contents" EntityType="Self.Service_Area_Contents" Schema="dbo" store:Type="Tables" />

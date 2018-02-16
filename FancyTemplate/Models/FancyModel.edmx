@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FancyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FancyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Blog">
           <Key>
             <PropertyRef Name="blog_id" />
@@ -51,6 +51,14 @@
           <Property Name="industries_content" Type="nvarchar" MaxLength="400" />
           <Property Name="industries_img" Type="nvarchar" MaxLength="50" />
           <Property Name="industries_url" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menu_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="menu_url" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Messages">
           <Key>
@@ -120,6 +128,7 @@
           <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Feature_Boxes" EntityType="Self.Feature_Boxes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Industries" EntityType="Self.Industries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service_Area" EntityType="Self.Service_Area" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service_Area_Contents" EntityType="Self.Service_Area_Contents" Schema="dbo" store:Type="Tables" />
@@ -130,8 +139,7 @@
             <End Role="Blog" EntitySet="Blog" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FancyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -261,7 +269,16 @@
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Blog" EntitySet="Blogs" />
           </AssociationSet>
+          <EntitySet Name="Menus" EntityType="FancyDBModel.Menu" />
         </EntityContainer>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menu_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="menu_url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -372,6 +389,15 @@
                 <ScalarProperty Name="testimonials_slider_author" ColumnName="testimonials_slider_author" />
                 <ScalarProperty Name="testimonials_slider_position" ColumnName="testimonials_slider_position" />
                 <ScalarProperty Name="testimonials_slider_img" ColumnName="testimonials_slider_img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="FancyDBModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="menu_url" ColumnName="menu_url" />
+                <ScalarProperty Name="menu_name" ColumnName="menu_name" />
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

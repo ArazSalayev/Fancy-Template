@@ -126,5 +126,14 @@
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Blog" EntitySet="Blogs" />
     </AssociationSet>
+    <EntitySet Name="Menus" EntityType="FancyDBModel.Menu" />
   </EntityContainer>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menu_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="menu_url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

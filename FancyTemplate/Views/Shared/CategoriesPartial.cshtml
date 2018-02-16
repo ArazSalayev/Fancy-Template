@@ -1,0 +1,17 @@
+﻿
+
+<div class="col-lg-3 col-md-6">
+    <aside class="f_widget categories_widget">
+        <div class="f_w_title">
+            <h3>Link Categories</h3>
+        </div>
+        @foreach (var item in Model._category)
+    {
+        <ul>
+            <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i>@item.category_name</a></li>
+
+        </ul>
+}
+        
+    </aside>
+</div>

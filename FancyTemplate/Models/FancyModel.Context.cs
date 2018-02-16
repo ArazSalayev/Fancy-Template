@@ -35,5 +35,6 @@ namespace FancyTemplate.Models
         public virtual DbSet<Service_Area_Contents> Service_Area_Contents { get; set; }
         public virtual DbSet<Slider> Sliders { get; set; }
         public virtual DbSet<Testimonials_Slider> Testimonials_Slider { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
     }
 }

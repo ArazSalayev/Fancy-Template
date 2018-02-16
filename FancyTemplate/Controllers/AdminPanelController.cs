@@ -56,7 +56,7 @@ namespace FancyTemplate.Controllers
         {
             if (Check.Check_Login())
             {
-                
+                Session.Abandon();
                 return RedirectToAction("LogIn");
             }
            
